@@ -117,9 +117,10 @@ export const PROJECTS: ProjectItem[] = [
     summary: 'Камер, дагалдах хэрэгслийн онлайн дэлгүүрийн туршилтын хувилбар. Би хайлттай каталог, хэрэглэгчийн бүртгэл, сагс, төлбөрийн туршилтын урсгал болон бараа, захиалга удирдах хэсгийг хийсэн.',
     deliverables: ['React', 'Vite', 'TypeScript', 'Supabase'],
     images: [
-      { src: '/projects/lensline-home.svg', alt: 'Lensline дэлгүүрийн компьютер дээрх нүүр хуудас' },
-      { src: '/projects/lensline-catalog.svg', alt: 'Lensline камерын каталог ба шүүлтүүрүүд' },
-      { src: '/projects/lensline-mobile.svg', alt: 'Lensline дэлгүүрийн гар утасны харагдац', portrait: true },
+      { src: '/projects/lensline-storefront.jpg', alt: 'Lensline дэлгүүрийн нүүр хуудас' },
+      { src: '/projects/lensline-products.jpg', alt: 'Lensline дэлгүүрийн бүтээгдэхүүний каталог, хайлт болон шүүлтүүрүүд' },
+      { src: '/projects/lensline-product-detail.jpg', alt: 'Lensline дэлгүүр дэх Nikon Z f камерын зураг, үнэ болон үзүүлэлт' },
+      { src: '/projects/lensline-phone.jpg', alt: 'Lensline дэлгүүрийн нүүр хуудас гар утсан дээр', portrait: true },
     ],
     repositoryUrl: 'https://github.com/nandydn555-cell/camera',
   },
