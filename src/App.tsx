@@ -6,6 +6,7 @@ import { ServicesSection } from './components/ServicesSection';
 import { ProjectsSection } from './components/ProjectsSection';
 import { ProjectModal } from './components/ProjectModal';
 import { ContactModal } from './components/ContactModal';
+import { Footer } from './components/Footer';
 import type { ProjectItem } from './data/portfolioData';
 
 declare global {
@@ -30,15 +31,18 @@ export default function App() {
   };
 
   return (
-    <main
+    <div
       className="portfolio-background min-h-screen"
       style={{ overflowX: 'clip' }}
     >
-      <HeroSection onOpenContact={() => handleOpenContact()} />
-      <MarqueeSection />
-      <AboutSection onOpenContact={() => handleOpenContact()} />
-      <ServicesSection />
-      <ProjectsSection onSelectProject={(p) => setSelectedProject(p)} />
+      <main>
+        <HeroSection onOpenContact={() => handleOpenContact()} />
+        <MarqueeSection />
+        <AboutSection onOpenContact={() => handleOpenContact()} />
+        <ServicesSection />
+        <ProjectsSection onSelectProject={(p) => setSelectedProject(p)} />
+      </main>
+      <Footer />
 
       <ProjectModal
         project={selectedProject}
@@ -51,6 +55,6 @@ export default function App() {
         initialProjectRef={projectRef}
         onClose={() => setContactOpen(false)}
       />
-    </main>
+    </div>
   );
 }
