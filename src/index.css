@@ -279,25 +279,25 @@
 
 /* Hero portrait with magnet */
 .hero-portrait-wrap {
-  position: absolute;
-  left: 50%;
+  position: relative;
+  align-self: center;
   z-index: 10;
-  width: min(400px, 108vw);
-  top: 54%;
-  transform: translate(-50%, -50%);
+  width: min(450px, 112vw);
+  aspect-ratio: 1;
+  margin-block: auto;
   touch-action: pan-y;
 }
 
 @media (min-width: 640px) {
-  .hero-portrait-wrap { width: min(500px, 82svh); }
+  .hero-portrait-wrap { width: 540px; }
 }
 
 @media (min-width: 768px) {
-  .hero-portrait-wrap { width: min(600px, 82svh); }
+  .hero-portrait-wrap { width: 640px; }
 }
 
 @media (min-width: 1024px) {
-  .hero-portrait-wrap { width: min(clamp(640px, 78svh, 46vw), 82svh); }
+  .hero-portrait-wrap { width: clamp(680px, 54vw, 760px); }
 }
 
 .hero-portrait-inner {

@@ -4,12 +4,28 @@ export const PORTRAIT_FALLBACK_URL =
 export const ABOUT_STICKERS = ['funds', 'git-it-girl', 'cursor', 'coding-cat', 'engineer'] as const;
 
 export const PROFILE = {
-  name: 'Нандин-эрдэнэ',
+  name: 'Нандин-Эрдэнэ',
   role: 'Мэдээллийн системийн оюутан',
   tagline: 'Өдөр тутмын асуудлыг хялбарчлах вэб апп бүтээдэг.',
   githubUrl: 'https://github.com/nandydn555-cell',
   bio: 'Би мэдээллийн системийн оюутан. Сэтгэл санааны тэмдэглэлээс эхлээд хайлттай каталог, захиалгын урсгал бүхий камерын дэлгүүр хүртэл өдөр тутмын хэрэгцээнд зориулсан вэб апп хийх дуртай. Мөн цахим архив дээр ажиллаж, өгөгдлийн сан, сүлжээ нь хэрэглэгчийн интерфэйстэй хэрхэн холбогддогийг судалдаг.',
 };
+
+interface CredentialBadge {
+  name: string;
+  issuer: string;
+  imageSrc?: string;
+  credentialUrl?: string;
+}
+
+export const CREDENTIAL_BADGES: readonly CredentialBadge[] = [
+  {
+    name: 'Step Up: Skills for Employability C1',
+    issuer: 'Pearson English Language Learning',
+    imageSrc: '/badges/pearson-employability-c1.png',
+    credentialUrl: 'https://www.credly.com/badges/399e0d5a-8179-4c50-8658-4fe33164dcec/public_url',
+  },
+];
 
 export interface SkillItem {
   number: string;

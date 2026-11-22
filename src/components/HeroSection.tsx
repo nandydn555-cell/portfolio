@@ -105,7 +105,7 @@ export function HeroSection({ onOpenContact }: HeroSectionProps) {
       </div>
 
       {/* Bottom Bar */}
-      <div className="relative z-20 flex flex-wrap justify-between items-end gap-x-6 gap-y-4 px-5 sm:px-6 md:px-10 pb-7 sm:pb-8 md:pb-10 mt-auto">
+      <div className="relative z-20 flex flex-wrap justify-between items-end gap-x-6 gap-y-4 px-5 sm:px-6 md:px-10 pb-7 sm:pb-8 md:pb-10">
         <FadeIn delay={0.35} y={20}>
           <p className="font-semibold text-sm sm:text-base">
             {PROFILE.role}
