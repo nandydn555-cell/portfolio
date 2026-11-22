@@ -25,3 +25,4 @@ View your app in AI Studio: https://ai.studio/apps/94fba923-d635-40a9-acc9-4443f
 - `public/theme/floral-lace.png` — хэрэглэгчийн хавсаргасан цэцгэн торон нэхээсний жишээ.
 - `public/theme/stickers/` — «Миний тухай» хэсэгт ашигласан, хэрэглэгчийн хавсаргасан таван стикер.
 - `public/badges/pearson-employability-c1.png` — [Credly дээрх Pearson-ийн албан ёсны badge](https://www.credly.com/badges/399e0d5a-8179-4c50-8658-4fe33164dcec/public_url).
+- `public/badges/microsoft-learn/` — [Microsoft Learn](https://learn.microsoft.com/en-us/training/)-ийн C# модулийн албан дүрсүүд. Дуусгасан огноог суралцагчийн Achievements хэсгийн зургаас авсан.

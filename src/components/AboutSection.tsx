@@ -1,5 +1,5 @@
-import { Award } from 'lucide-react';
-import { ABOUT_STICKERS, CREDENTIAL_BADGES, PROFILE } from '../data/portfolioData';
+import { Award, ChevronDown } from 'lucide-react';
+import { ABOUT_STICKERS, CREDENTIAL_BADGES, MICROSOFT_LEARN_MODULES, PROFILE } from '../data/portfolioData';
 import { FadeIn } from './FadeIn';
 import { AnimatedText } from './AnimatedText';
 import { ContactButton } from './ContactButton';
@@ -85,6 +85,53 @@ export function AboutSection({ onOpenContact }: AboutSectionProps) {
               </FadeIn>
             ))}
           </ul>
+
+          <details className="group mt-6 rounded-2xl border border-[#e4cddb] bg-[#fff9f1] text-left">
+            <summary className="flex cursor-pointer list-none items-center gap-3 rounded-2xl p-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#713b63] sm:px-5 [&::-webkit-details-marker]:hidden">
+              <span className="flex shrink-0 -space-x-3" aria-hidden="true">
+                {MICROSOFT_LEARN_MODULES.slice(0, 3).map(({ slug }) => (
+                  <img
+                    key={slug}
+                    src={`/badges/microsoft-learn/${slug}.svg`}
+                    alt=""
+                    loading="lazy"
+                    className="size-8 rounded-full ring-2 ring-[#fff9f1] sm:size-10"
+                  />
+                ))}
+              </span>
+              <span className="min-w-0 flex-1">
+                <span className="display-heading block text-xl leading-tight text-[#472b39] sm:text-2xl">Microsoft Learn</span>
+                <span className="text-sm text-[#6d4957]">C# · {MICROSOFT_LEARN_MODULES.length} сургалтын badge</span>
+              </span>
+              <ChevronDown className="size-5 shrink-0 text-[#713b63] transition-transform group-open:rotate-180 motion-reduce:transition-none" aria-hidden="true" />
+            </summary>
+            <ul className="grid gap-3 border-t border-[#e4cddb] p-3 sm:grid-cols-2 sm:p-4">
+              {MICROSOFT_LEARN_MODULES.map(({ slug, name, completedOn, passedAssessment }) => (
+                <li key={slug} className="flex min-w-0 items-start gap-3 rounded-xl border border-[#e4cddb] bg-[#f8eef5] p-3">
+                  <img
+                    src={`/badges/microsoft-learn/${slug}.svg`}
+                    alt=""
+                    loading="lazy"
+                    className="size-11 shrink-0"
+                  />
+                  <div className="min-w-0">
+                    <a
+                      href={`https://learn.microsoft.com/en-us/training/modules/${slug}/`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="break-words text-sm font-semibold leading-snug text-[#472b39] underline decoration-[#713b63]/45 underline-offset-3 hover:decoration-[#713b63]"
+                    >
+                      {name}
+                    </a>
+                    <div className="mt-1 flex flex-wrap gap-x-2 gap-y-1 text-xs text-[#6d4957]">
+                      <time dateTime={completedOn}>{completedOn.replaceAll('-', '.')}</time>
+                      {passedAssessment ? <span className="font-medium text-[#68405f]">Шалгалтад тэнцсэн</span> : null}
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </details>
         </section>
       ) : null}
     </section>

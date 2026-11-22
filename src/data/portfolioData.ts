@@ -27,6 +27,85 @@ export const CREDENTIAL_BADGES: readonly CredentialBadge[] = [
   },
 ];
 
+interface MicrosoftLearnModule {
+  slug: string;
+  name: string;
+  completedOn: string;
+  passedAssessment?: boolean;
+}
+
+export const MICROSOFT_LEARN_MODULES: readonly MicrosoftLearnModule[] = [
+  {
+    slug: 'csharp-format-strings',
+    name: 'Format alphanumeric data for presentation in C#',
+    completedOn: '2026-11-22',
+    passedAssessment: true,
+  },
+  {
+    slug: 'csharp-arrays-operations',
+    name: 'Perform operations on arrays using helper methods in C#',
+    completedOn: '2026-11-17',
+    passedAssessment: true,
+  },
+  {
+    slug: 'csharp-convert-cast',
+    name: 'Convert data types using casting and conversion techniques in C#',
+    completedOn: '2026-11-17',
+    passedAssessment: true,
+  },
+  {
+    slug: 'csharp-choose-data-type',
+    name: 'Choose the correct data type in your C# code',
+    completedOn: '2026-11-17',
+    passedAssessment: true,
+  },
+  {
+    slug: 'csharp-evaluate-boolean-expressions',
+    name: 'Evaluate Boolean expressions to make decisions in C#',
+    completedOn: '2026-11-17',
+    passedAssessment: true,
+  },
+  {
+    slug: 'challenge-project-develop-branching-looping-structures-c-sharp',
+    name: 'Challenge project - Develop branching and looping structures in C#',
+    completedOn: '2026-11-17',
+    passedAssessment: true,
+  },
+  {
+    slug: 'guided-project-develop-conditional-branching-looping',
+    name: 'Guided project - Develop conditional branching and looping structures in C#',
+    completedOn: '2026-11-17',
+    passedAssessment: true,
+  },
+  {
+    slug: 'csharp-do-while',
+    name: 'Add looping logic to your code using the do-while and while statements in C#',
+    completedOn: '2026-11-17',
+  },
+  {
+    slug: 'csharp-for',
+    name: 'Iterate through a code block using for statement in C#',
+    completedOn: '2026-11-17',
+    passedAssessment: true,
+  },
+  {
+    slug: 'csharp-switch-case',
+    name: 'Branch the flow of code using the switch-case construct in C#',
+    completedOn: '2026-11-17',
+  },
+  {
+    slug: 'csharp-code-blocks',
+    name: 'Control variable scope and logic using code blocks in C#',
+    completedOn: '2026-11-17',
+  },
+  {
+    slug: 'csharp-read-write-files',
+    name: 'Read and write files in C#',
+    completedOn: '2026-11-16',
+    passedAssessment: true,
+  },
+];
+
 export interface SkillItem {
   number: string;
   name: string;
