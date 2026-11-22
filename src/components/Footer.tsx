@@ -17,6 +17,11 @@ const formFields = [
   { key: 'name', label: 'Таны нэр', placeholder: 'Нэрээ бичээрэй', type: 'text', autoComplete: 'name' },
   { key: 'email', label: 'Таны имэйл', placeholder: 'ner@example.com', type: 'email', autoComplete: 'email' },
 ] as const;
+const contactLinks = [
+  { label: 'Email', href: `mailto:${PUBLIC_CONTACT.email}`, external: false },
+  { label: 'GitHub', href: PROFILE.githubUrl, external: true },
+  { label: 'Instagram', href: PUBLIC_CONTACT.instagramUrl, external: true },
+];
 
 function UlaanbaatarClock() {
   const [now, setNow] = useState(() => new Date());
@@ -63,7 +68,7 @@ function FooterContactForm() {
     });
   };
 
-  const mailto = draft && PUBLIC_CONTACT.email
+  const mailto = draft
     ? `mailto:${PUBLIC_CONTACT.email}?subject=${encodeURIComponent(draft.subject)}&body=${encodeURIComponent(draft.body)}`
     : '';
 
@@ -109,7 +114,7 @@ function FooterContactForm() {
         {draft ? (
           <p className="flex items-start gap-2 text-sm font-medium text-[#5a303e]">
             <Check className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
-            {mailto ? 'Ноорог бэлэн. Имэйл апп дээрээ нээгээд илгээгээрэй.' : 'Ноорог бэлэн. Доорх бичвэрийг хуулж аваарай.'}
+            Ноорог бэлэн. Имэйл апп дээрээ нээгээд илгээгээрэй.
           </p>
         ) : null}
       </div>
@@ -117,8 +122,6 @@ function FooterContactForm() {
         <a href={mailto} className="footer-link justify-self-start">
           Имэйл апп нээх <ArrowUpRight className="size-4" aria-hidden="true" />
         </a>
-      ) : draft ? (
-        <textarea aria-label="Бэлэн имэйлийн ноорог" className="footer-field resize-y" rows={4} readOnly value={draft.body} />
       ) : null}
     </form>
   );
@@ -126,12 +129,6 @@ function FooterContactForm() {
 
 export function Footer() {
   const [copyStatus, setCopyStatus] = useState<'idle' | 'copied' | 'failed'>('idle');
-  const links = [
-    { label: 'Email', href: PUBLIC_CONTACT.email ? `mailto:${PUBLIC_CONTACT.email}` : '', external: false },
-    { label: 'GitHub', href: PROFILE.githubUrl, external: true },
-    { label: 'Instagram', href: PUBLIC_CONTACT.instagramUrl, external: true },
-    { label: 'LinkedIn', href: PUBLIC_CONTACT.linkedInUrl, external: true },
-  ].filter(({ href }) => href);
 
   useEffect(() => {
     if (copyStatus === 'idle') return;
@@ -163,7 +160,7 @@ export function Footer() {
               Шинэ санаа, хамтын төсөл эсвэл зүгээр л мэнд мэдэх бол над руу бичээрэй.
             </p>
             <ul aria-label="Холбоо барих сувгууд" className="mt-1 flex flex-wrap gap-2">
-              {links.map(({ label, href, external }) => (
+              {contactLinks.map(({ label, href, external }) => (
                 <li key={label}>
                   <a
                     className="footer-link"
@@ -176,16 +173,14 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-            {PUBLIC_CONTACT.email ? (
-              <div className="flex min-h-9 flex-wrap items-center gap-x-3 gap-y-1 text-sm">
-                <button type="button" className="footer-copy" onClick={copyEmail}>
-                  {copyStatus === 'copied' ? <Check className="size-4" aria-hidden="true" /> : <Copy className="size-4" aria-hidden="true" />}
-                  {copyStatus === 'copied' ? 'Хуулагдлаа!' : 'Имэйл хуулах'}
-                </button>
-                <span className="sr-only" role="status">{copyStatus === 'copied' ? 'Имэйл хаяг хуулагдлаа.' : ''}</span>
-                {copyStatus === 'failed' ? <span role="status" className="break-all">{PUBLIC_CONTACT.email}</span> : null}
-              </div>
-            ) : null}
+            <div className="flex min-h-9 flex-wrap items-center gap-x-3 gap-y-1 text-sm">
+              <button type="button" className="footer-copy" onClick={copyEmail}>
+                {copyStatus === 'copied' ? <Check className="size-4" aria-hidden="true" /> : <Copy className="size-4" aria-hidden="true" />}
+                {copyStatus === 'copied' ? 'Хуулагдлаа!' : 'Имэйл хуулах'}
+              </button>
+              <span className="sr-only" role="status">{copyStatus === 'copied' ? 'Имэйл хаяг хуулагдлаа.' : ''}</span>
+              {copyStatus === 'failed' ? <span role="status" className="break-all">{PUBLIC_CONTACT.email}</span> : null}
+            </div>
           </div>
 
           <div className="portfolio-footer-form p-6 sm:p-9 lg:p-10">

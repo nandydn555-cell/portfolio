@@ -12,9 +12,8 @@ export const PROFILE = {
 };
 
 export const PUBLIC_CONTACT = {
-  email: '',
-  instagramUrl: '',
-  linkedInUrl: '',
+  email: 'nandydn555@gmail.com',
+  instagramUrl: 'https://www.instagram.com/nainiiyaa/',
 };
 
 interface CredentialBadge {
