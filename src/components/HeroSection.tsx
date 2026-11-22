@@ -6,6 +6,9 @@ export interface HeroSectionProps {
   onOpenContact: () => void;
 }
 
+const navItemClassName =
+  'shrink-0 whitespace-nowrap rounded-sm transition-colors hover:text-[#713b63] focus-visible:ring-2 focus-visible:ring-[#713b63]';
+
 export function HeroSection({ onOpenContact }: HeroSectionProps) {
   return (
     <section
@@ -22,30 +25,30 @@ export function HeroSection({ onOpenContact }: HeroSectionProps) {
       <FadeIn as="header" delay={0} y={-20} className="relative z-20 w-full">
         <nav
           aria-label="Үндсэн цэс"
-          className="flex flex-wrap items-center justify-between gap-2 px-4 sm:px-6 md:px-10 pt-6 md:pt-8"
+          className="display-heading flex flex-wrap items-center justify-between gap-2 px-4 pt-6 text-sm leading-tight text-[#472b39] sm:px-6 sm:text-base md:px-10 md:pt-8 md:text-xl lg:text-2xl"
         >
           <a
             href="#about"
-            className="font-semibold text-xs sm:text-sm md:text-lg lg:text-xl whitespace-nowrap shrink-0 transition-colors hover:text-[#713b63] focus-visible:ring-2 focus-visible:ring-[#713b63] rounded-sm"
+            className={navItemClassName}
           >
             Миний тухай
           </a>
           <a
             href="#services"
-            className="font-semibold text-xs sm:text-sm md:text-lg lg:text-xl whitespace-nowrap shrink-0 transition-colors hover:text-[#713b63] focus-visible:ring-2 focus-visible:ring-[#713b63] rounded-sm"
+            className={navItemClassName}
           >
             Ур чадвар
           </a>
           <a
             href="#projects"
-            className="font-semibold text-xs sm:text-sm md:text-lg lg:text-xl whitespace-nowrap shrink-0 transition-colors hover:text-[#713b63] focus-visible:ring-2 focus-visible:ring-[#713b63] rounded-sm"
+            className={navItemClassName}
           >
             Бүтээлүүд
           </a>
           <button
             type="button"
             onClick={onOpenContact}
-            className="font-semibold text-xs sm:text-sm md:text-lg lg:text-xl whitespace-nowrap shrink-0 cursor-pointer bg-transparent border-0 p-0 transition-colors hover:text-[#713b63] focus-visible:ring-2 focus-visible:ring-[#713b63] rounded-sm"
+            className={`${navItemClassName} cursor-pointer border-0 bg-transparent p-0`}
           >
             Холбоо барих
           </button>
