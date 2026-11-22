@@ -1,5 +1,5 @@
-import { useRef } from 'react';
-import { motion, useScroll, useTransform, type MotionValue } from 'motion/react';
+import { Fragment, useRef } from 'react';
+import { motion, useReducedMotion, useScroll, useTransform, type MotionValue } from 'motion/react';
 import { computeCharProgressRange } from '../utils/portfolioLogic';
 
 interface AnimatedCharProps {
@@ -9,71 +9,71 @@ interface AnimatedCharProps {
 }
 
 function AnimatedChar({ char, progress, range }: AnimatedCharProps) {
-  const opacity = useTransform(progress, range, [0.2, 1]);
+  const opacity = useTransform(progress, range, [0.25, 1]);
+  return <motion.span style={{ opacity }}>{char}</motion.span>;
+}
 
-  return (
-    <span className="relative inline-block">
-      <span className="opacity-0 select-none" aria-hidden="true">
-        {char}
-      </span>
-      <motion.span
-        style={{ opacity }}
-        className="absolute inset-0"
-      >
-        {char}
-      </motion.span>
-    </span>
-  );
+interface AnimatedParagraph {
+  text: string;
+  className?: string;
+  emphasis?: boolean;
 }
 
 export interface AnimatedTextProps {
-  text: string;
+  paragraphs: readonly AnimatedParagraph[];
   className?: string;
 }
 
-export function AnimatedText({ text, className = '' }: AnimatedTextProps) {
-  const containerRef = useRef<HTMLParagraphElement>(null);
-
+export function AnimatedText({ paragraphs, className }: AnimatedTextProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const reduceMotion = useReducedMotion();
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ['start 0.8', 'end 0.2'],
+    offset: ['start 0.88', 'end 0.62'],
   });
-
-  const words = text.split(' ');
-  const totalChars = text.length;
-  let runningIndex = 0;
+  const totalChars = paragraphs.reduce((length, { text }) => length + text.length, 0);
+  let charIndex = 0;
 
   return (
-    <p
-      ref={containerRef}
-      className={className}
-      style={{ fontSize: 'clamp(1rem, 2vw, 1.35rem)' }}
-    >
-      {words.map((word, wordIdx) => {
-        const chars = word.split('');
-        const wordStart = runningIndex;
-        runningIndex += word.length + (wordIdx < words.length - 1 ? 1 : 0);
+    <div ref={containerRef} className={className}>
+      {paragraphs.map(({ text, className: paragraphClassName, emphasis }) => {
+        const Text = emphasis ? 'strong' : 'span';
+        const words = text.split(' ');
 
         return (
-          <span key={`w-${wordIdx}`} className="inline-block whitespace-nowrap">
-            {chars.map((char, charOffset) => {
-              const charIndex = wordStart + charOffset;
-              const range = computeCharProgressRange(charIndex, totalChars);
-              return (
-                <AnimatedChar
-                  key={`c-${charIndex}`}
-                  char={char}
-                  progress={scrollYProgress}
-                  range={range}
-                />
-              );
-            })}
-            {wordIdx < words.length - 1 && (
-              <span className="inline-block">&nbsp;</span>
-            )}
-          </span>
+          <p key={text} className={paragraphClassName}>
+            <Text>
+              {reduceMotion ? text : (
+                <>
+                  <span className="sr-only select-none">{text}</span>
+                  <span aria-hidden="true">
+                    {words.map((word, wordIndex) => {
+                      const wordStart = charIndex;
+                      charIndex += word.length + (wordIndex < words.length - 1 ? 1 : 0);
+
+                      return (
+                        <Fragment key={wordStart}>
+                          {wordIndex > 0 ? ' ' : null}
+                          <span className="inline-block whitespace-nowrap">
+                            {word.split('').map((char, offset) => (
+                              <AnimatedChar
+                                key={wordStart + offset}
+                                char={char}
+                                progress={scrollYProgress}
+                                range={computeCharProgressRange(wordStart + offset, totalChars)}
+                              />
+                            ))}
+                          </span>
+                        </Fragment>
+                      );
+                    })}
+                  </span>
+                </>
+              )}
+            </Text>
+          </p>
         );
       })}
-    </p>
+    </div>
   );
 }

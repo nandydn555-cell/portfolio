@@ -1,11 +1,21 @@
 import { Award, ChevronDown } from 'lucide-react';
 import { ABOUT_STICKERS, CREDENTIAL_BADGES, MICROSOFT_LEARN_MODULES, PROFILE } from '../data/portfolioData';
 import { FadeIn } from './FadeIn';
+import { AnimatedText } from './AnimatedText';
 import { ContactButton } from './ContactButton';
 
 export interface AboutSectionProps {
   onOpenContact: () => void;
 }
+
+const aboutParagraphs = [
+  {
+    text: `Сайн уу! Намайг ${PROFILE.name} гэдэг.`,
+    className: 'text-center text-base font-semibold text-[#472b39] sm:text-xl',
+  },
+  ...PROFILE.bio.paragraphs.map((text) => ({ text })),
+  { text: PROFILE.bio.closing, emphasis: true, className: 'text-[#472b39]' },
+];
 
 export function AboutSection({ onOpenContact }: AboutSectionProps) {
   return (
@@ -33,13 +43,10 @@ export function AboutSection({ onOpenContact }: AboutSectionProps) {
               </h2>
             </FadeIn>
 
-            <div className="max-w-[35rem] space-y-4 text-[#513740] text-sm leading-relaxed sm:text-base">
-              <p className="text-center text-base font-semibold text-[#472b39] sm:text-xl">
-                Сайн уу! Намайг {PROFILE.name} гэдэг.
-              </p>
-              {PROFILE.bio.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-              <p className="text-[#472b39]"><strong>{PROFILE.bio.closing}</strong></p>
-            </div>
+            <AnimatedText
+              paragraphs={aboutParagraphs}
+              className="max-w-[35rem] space-y-4 text-[#513740] text-sm leading-relaxed sm:text-base"
+            />
           </div>
 
           <ContactButton onClick={onOpenContact} />
