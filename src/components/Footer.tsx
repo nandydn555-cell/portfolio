@@ -185,7 +185,7 @@ export function Footer() {
 
           <div className="portfolio-footer-form p-6 sm:p-9 lg:p-10">
             <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
-              <h3 className="display-heading text-3xl leading-none sm:text-4xl">Над руу бичих</h3>
+              <h3 className="display-heading text-3xl leading-none sm:text-4xl">Надтай холбогдох</h3>
               <UlaanbaatarClock />
             </div>
             <FooterContactForm />
