@@ -419,6 +419,136 @@
   font-size: 0.8125rem;
 }
 
+.contact-modal-backdrop {
+  background: #2b182070;
+  backdrop-filter: blur(5px);
+}
+
+.contact-modal-frame {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 2px solid #e8c3d0;
+  border-radius: 1.8rem;
+  padding: clamp(0.55rem, 2vw, 0.9rem);
+  background: repeating-linear-gradient(90deg, #c6d5e2 0 1.2rem, #f5f0ea 1.2rem 1.85rem);
+  box-shadow: 0 20px 65px #2b182050, inset 0 1px 3px #fff9;
+  color: #2b1820;
+}
+
+.contact-modal-frame::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 28% 0 0;
+  background: url('/theme/floral-lace.png') center / 18rem;
+  opacity: 0.64;
+  mask-image: linear-gradient(transparent, #000 50%);
+}
+
+.contact-modal-paper {
+  border: 3px solid #e8c3d0;
+  border-radius: 1.25rem;
+  background-color: #faf7f5;
+  background-image:
+    linear-gradient(to right, #bca9b246 1px, transparent 1px),
+    linear-gradient(to bottom, #bca9b246 1px, transparent 1px);
+  background-position: center;
+  background-size: 20px 20px;
+  box-shadow: 0 0 0 1px #fff7;
+}
+
+.contact-modal-quick-links {
+  border-bottom: 1px solid #dbc1cf;
+}
+
+.contact-modal-pill,
+.contact-modal-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  border: 1px solid #cda6bc;
+  border-radius: 999px;
+  background: #fff9f8;
+  color: #51233f;
+  cursor: pointer;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.contact-modal-pill {
+  min-height: 2.25rem;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.contact-modal-copy {
+  background: #f3e4ee;
+}
+
+.contact-modal-close {
+  width: 2.75rem;
+  height: 2.75rem;
+  flex-shrink: 0;
+  background: #f6e4ee;
+}
+
+.contact-modal-pill:hover,
+.contact-modal-close:hover {
+  background: #eedbe7;
+  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-modal-pill,
+  .contact-modal-close {
+    transition: none;
+  }
+
+  .contact-modal-pill:hover,
+  .contact-modal-close:hover {
+    transform: none;
+  }
+}
+
+.contact-modal-label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.contact-modal-field {
+  display: block;
+  width: 100%;
+  border: 1px solid #cfaec0;
+  border-radius: 0.7rem;
+  padding: 0.65rem 0.75rem;
+  background: #fffcfb;
+  color: #2b1820;
+  font-size: 0.95rem;
+}
+
+.contact-modal-field::placeholder {
+  color: #6d5864;
+}
+
+.contact-modal-field[aria-invalid='true'] {
+  border-color: #a25070;
+}
+
+.contact-modal-paper :is(a, button, input, select, textarea):focus-visible {
+  outline: 2px solid #713b63;
+  outline-offset: 2px;
+}
+
+.contact-modal-error {
+  margin-top: 0.35rem;
+  color: #7d3150;
+  font-size: 0.8125rem;
+}
+
 .hero-sparkles span {
   position: absolute;
   width: var(--size, 19px);

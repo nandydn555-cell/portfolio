@@ -1,7 +1,8 @@
 import { useEffect, useState, type FormEvent } from 'react';
-import { ArrowUpRight, Check, Clock3, Copy, Mail } from 'lucide-react';
+import { ArrowUpRight, Check, Clock3, Mail } from 'lucide-react';
 import { PROFILE, PUBLIC_CONTACT } from '../data/portfolioData';
 import { validateContactForm, type ContactFormInput, type ContactValidationResult } from '../utils/portfolioLogic';
+import { CopyEmailButton } from './CopyEmailButton';
 
 const ulaanbaatarTime = new Intl.DateTimeFormat('mn-MN', {
   timeZone: 'Asia/Ulaanbaatar',
@@ -128,23 +129,6 @@ function FooterContactForm() {
 }
 
 export function Footer() {
-  const [copyStatus, setCopyStatus] = useState<'idle' | 'copied' | 'failed'>('idle');
-
-  useEffect(() => {
-    if (copyStatus === 'idle') return;
-    const timeout = window.setTimeout(() => setCopyStatus('idle'), 2400);
-    return () => window.clearTimeout(timeout);
-  }, [copyStatus]);
-
-  const copyEmail = async () => {
-    try {
-      await navigator.clipboard.writeText(PUBLIC_CONTACT.email);
-      setCopyStatus('copied');
-    } catch {
-      setCopyStatus('failed');
-    }
-  };
-
   return (
     <footer id="contact" aria-labelledby="footer-heading" className="portfolio-footer px-5 py-8 sm:px-8 sm:py-12 lg:px-10">
       <div className="mx-auto max-w-6xl">
@@ -174,12 +158,7 @@ export function Footer() {
               ))}
             </ul>
             <div className="flex min-h-9 flex-wrap items-center gap-x-3 gap-y-1 text-sm">
-              <button type="button" className="footer-copy" onClick={copyEmail}>
-                {copyStatus === 'copied' ? <Check className="size-4" aria-hidden="true" /> : <Copy className="size-4" aria-hidden="true" />}
-                {copyStatus === 'copied' ? 'Хуулагдлаа!' : 'Имэйл хуулах'}
-              </button>
-              <span className="sr-only" role="status">{copyStatus === 'copied' ? 'Имэйл хаяг хуулагдлаа.' : ''}</span>
-              {copyStatus === 'failed' ? <span role="status" className="break-all">{PUBLIC_CONTACT.email}</span> : null}
+              <CopyEmailButton label="Имэйл хуулах" className="footer-copy" />
             </div>
           </div>
 
