@@ -1,7 +1,6 @@
 import { Award, ChevronDown } from 'lucide-react';
 import { ABOUT_STICKERS, CREDENTIAL_BADGES, MICROSOFT_LEARN_MODULES, PROFILE } from '../data/portfolioData';
 import { FadeIn } from './FadeIn';
-import { AnimatedText } from './AnimatedText';
 import { ContactButton } from './ContactButton';
 
 export interface AboutSectionProps {
@@ -23,7 +22,7 @@ export function AboutSection({ onOpenContact }: AboutSectionProps) {
           </FadeIn>
         ))}
 
-        <div className="about-card flex min-w-0 flex-col items-center gap-8 rounded-[2rem] border border-[#d7c3b5] bg-[#fff9f1] px-5 py-10 sm:gap-12 sm:px-14 sm:py-14">
+        <div className="about-card flex min-w-0 flex-col items-center gap-8 rounded-[2rem] border border-[#d7c3b5] px-5 py-10 sm:gap-10 sm:px-14 sm:py-14">
           <div className="flex flex-col items-center gap-6 sm:gap-9">
             <FadeIn delay={0} y={40}>
               <h2
@@ -34,10 +33,13 @@ export function AboutSection({ onOpenContact }: AboutSectionProps) {
               </h2>
             </FadeIn>
 
-            <AnimatedText
-              text={PROFILE.bio}
-              className="text-[#513740] font-medium text-center leading-relaxed max-w-[560px]"
-            />
+            <div className="max-w-[35rem] space-y-4 text-[#513740] text-sm leading-relaxed sm:text-base">
+              <p className="text-center text-base font-semibold text-[#472b39] sm:text-xl">
+                Сайн уу! Намайг {PROFILE.name} гэдэг.
+              </p>
+              {PROFILE.bio.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+              <p className="text-[#472b39]"><strong>{PROFILE.bio.closing}</strong></p>
+            </div>
           </div>
 
           <ContactButton onClick={onOpenContact} />
