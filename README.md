@@ -21,7 +21,7 @@ View your app in AI Studio: https://ai.studio/apps/94fba923-d635-40a9-acc9-4443f
 
 ## Загварын зургийн эх сурвалж
 
-- `public/theme/plaid-folder.png` — хэрэглэгчийн хавсаргасан ягаан, шаргал чагтан хээтэй хавтасны жишээ.
+- `public/theme/oxblood-crocodile-leather.webp` — хэрэглэгчийн өгсөн матрын арьсан хавтасны жишгээр ImageGen-ээр үүсгэсэн хээ.
 - `public/theme/floral-lace.png` — хэрэглэгчийн хавсаргасан цэцгэн торон нэхээсний жишээ.
 - `public/theme/stickers/` — «Миний тухай» хэсэгт ашигласан, хэрэглэгчийн хавсаргасан таван стикер.
 - `public/badges/pearson-employability-c1.png` — [Credly дээрх Pearson-ийн албан ёсны badge](https://www.credly.com/badges/399e0d5a-8179-4c50-8658-4fe33164dcec/public_url).

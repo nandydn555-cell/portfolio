@@ -207,8 +207,20 @@
 }
 
 .project-folder {
-  --folder-paper: #fbf2e3;
-  --folder-edge: #cdbbab;
+  --folder-leather: #24090e;
+  --folder-edge: #4d2527;
+  --folder-cream: #faf5f0;
+  --folder-ink: #2a1216;
+}
+
+.project-folder-tab,
+.project-folder-front {
+  background-color: var(--folder-leather);
+  background-image:
+    linear-gradient(155deg, #843d4b24, transparent 45%, #17060970),
+    url('/theme/oxblood-crocodile-leather.webp');
+  background-size: auto, 36rem;
+  border: 1px solid var(--folder-edge);
 }
 
 .project-folder-tab {
@@ -217,31 +229,36 @@
   min-width: min(10rem, 100%);
   max-width: 88%;
   margin-bottom: -1px;
-  padding: 0.95rem 2.8rem 0.95rem 1.2rem;
-  border: 1px solid var(--folder-edge);
+  padding: 0.45rem 2.8rem 1.35rem 1.2rem;
+  border-bottom: 0;
   border-radius: 1.35rem 3.25rem 0 0 / 1.35rem 2.5rem 0 0;
-  background: var(--folder-paper);
-  color: #5d3c49;
+  background-position: center, 1.5rem 0;
+  box-shadow:
+    inset 0 2px 2px #f6afb04d,
+    inset 0 5px 10px #f2a0a010,
+    0 -3px 10px #24090e25;
+  color: #f7efea;
+  text-shadow: 0 1px 2px #140306;
 }
 
 .project-folder-front {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  border: 1px solid var(--folder-edge);
   border-radius: 0 1.5rem 1.5rem 1.5rem;
-  background-color: #f4e7df;
-  box-shadow: 0 0.65rem 1.4rem #53332c25;
+  background-position: center, 1.5rem 4rem;
+  box-shadow:
+    inset 0 1px 2px #f6afb057,
+    inset 0 0 0 3px #ffbfbd0d,
+    inset 0 -8px 14px #16060870,
+    0 3px 5px #2a121650,
+    0 17px 28px -10px #2a121678;
 }
 
-.project-folder-front::before {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  background: url('/theme/plaid-folder.png') center 73% / cover;
-  transform: scale(1.75);
-  transform-origin: 50% 67%;
+.project-folder-insert {
+  border-color: #dccac2;
+  background-color: var(--folder-cream);
+  color: var(--folder-ink);
 }
 
 .hero-sparkles span {

@@ -9,7 +9,7 @@ export function LiveProjectButton({ onClick, projectName }: LiveProjectButtonPro
       type="button"
       onClick={onClick}
       aria-label={`${projectName} төслийн дэлгэрэнгүй`}
-      className="rounded-full border border-[#ad7e95] bg-[#f6e6ef] px-4 py-2.5 text-sm font-semibold whitespace-nowrap text-[#653550] transition-colors hover:bg-[#efd8e6] focus-visible:ring-2 focus-visible:ring-[#713b63] focus-visible:ring-offset-2 sm:px-5 cursor-pointer"
+      className="cursor-pointer whitespace-nowrap rounded-full border border-[#cba5ab] bg-[#f2e1e3] px-4 py-2.5 text-sm font-semibold text-[#4e252d] transition-colors hover:bg-[#ead1d6] focus-visible:ring-2 focus-visible:ring-[#743b46] focus-visible:ring-offset-2 sm:px-5"
     >
       Дэлгэрэнгүй
     </button>

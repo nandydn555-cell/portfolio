@@ -33,15 +33,15 @@ function ProjectCard({
           scale,
           top: `${topOffset}px`,
         }}
-        className="project-folder relative w-full max-w-5xl"
+        className="project-folder relative w-full max-w-5xl md:origin-top"
       >
         <p className="project-folder-tab text-xs font-semibold sm:text-sm">
           {project.category}
         </p>
 
         <div className="project-folder-front p-3 sm:p-5 md:p-7">
-          <div className="mb-3 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-[#dbc9bc] bg-[#fff8ee] px-4 py-3 sm:mb-5 sm:px-5">
-            <h3 className="display-heading min-w-0 text-2xl leading-tight text-[#472b39] sm:text-3xl md:text-4xl">
+          <div className="project-folder-insert mb-3 flex flex-wrap items-center justify-between gap-3 rounded-2xl border px-4 py-3 sm:mb-5 sm:px-5">
+            <h3 className="display-heading min-w-0 text-2xl leading-tight sm:text-3xl md:text-4xl">
               {project.name}
             </h3>
             <LiveProjectButton
@@ -55,10 +55,10 @@ function ProjectCard({
               src={cover.src}
               alt={cover.alt}
               loading="lazy"
-              className={`block h-[clamp(11rem,34vw,25rem)] w-full rounded-2xl border border-[#dbc9bc] bg-[#f8eee5] ${cover.portrait || cover.fit === 'contain' ? 'object-contain' : 'object-cover object-top'}`}
+              className={`project-folder-insert block h-[clamp(11rem,34vw,25rem)] w-full rounded-2xl border ${cover.portrait || cover.fit === 'contain' ? 'object-contain' : 'object-cover object-top'}`}
             />
           ) : (
-            <p className="rounded-2xl border border-[#dbc9bc] bg-[#fff8ee] px-4 py-4 text-sm leading-relaxed text-[#513740] sm:px-5 sm:text-base">
+            <p className="project-folder-insert rounded-2xl border px-4 py-4 text-sm leading-relaxed sm:px-5 sm:text-base">
               {project.summary}
             </p>
           )}
