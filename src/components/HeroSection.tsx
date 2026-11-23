@@ -1,6 +1,7 @@
 import { PORTRAIT_FALLBACK_URL, PROFILE } from '../data/portfolioData';
 import { FadeIn } from './FadeIn';
 import { ContactButton } from './ContactButton';
+import { CvDownload } from './CvDownload';
 
 export interface HeroSectionProps {
   onOpenContact: () => void;
@@ -118,7 +119,8 @@ export function HeroSection({ onOpenContact }: HeroSectionProps) {
           </p>
         </FadeIn>
 
-        <FadeIn delay={0.5} y={20}>
+        <FadeIn delay={0.5} y={20} className="flex flex-wrap items-center gap-3">
+          <CvDownload />
           <ContactButton onClick={onOpenContact} />
         </FadeIn>
       </div>
