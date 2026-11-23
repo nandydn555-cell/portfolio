@@ -25,6 +25,13 @@
   background-position: center top;
 }
 
+.skills-background {
+  background-color: #fbf9e9;
+  background-image: url('/theme/skills-stars.png');
+  background-position: center top;
+  background-size: clamp(25rem, 55vw, 46rem) auto;
+}
+
 .display-heading {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-weight: 600;
