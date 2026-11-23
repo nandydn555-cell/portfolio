@@ -204,7 +204,7 @@ export const PROJECTS: ProjectItem[] = [
     images: [
       { src: '/projects/petal-and-ink.webp', alt: 'Petal & Ink-ийн 3D дэвтэр, сарын сэтгэл санааны хуанли', fit: 'contain' },
     ],
-    demoUrl: '/projects/feeling-tracker.html',
+    demoUrl: 'https://feeling-tracker.vercel.app/',
   },
   {
     id: 'celestial-planner',
@@ -215,7 +215,7 @@ export const PROJECTS: ProjectItem[] = [
     images: [
       { src: '/projects/celestial-planner.webp', alt: 'Celestial Grace төлөвлөгчийн өдрийн ажлын жагсаалт, тэмдэглэл ба хавтаснууд', fit: 'contain' },
     ],
-    demoUrl: '/projects/celestial-planner/index.html',
+    demoUrl: 'https://celestial-planner-sigma.vercel.app/',
   },
   {
     id: 'lensline',
