@@ -13,6 +13,7 @@ const navItemClassName =
 export function HeroSection({ onOpenContact }: HeroSectionProps) {
   return (
     <section
+      id="home"
       className="hero-section relative isolate min-h-[max(710px,100svh)] sm:min-h-[max(680px,100svh)] flex flex-col"
       style={{ overflowX: 'clip' }}
     >
@@ -23,10 +24,20 @@ export function HeroSection({ onOpenContact }: HeroSectionProps) {
         <span />
       </div>
       {/* Top Navbar */}
-      <FadeIn as="header" delay={0} y={-20} className="relative z-20 w-full">
+      <FadeIn as="header" delay={0} y={-20} className="relative z-20 flex w-full flex-wrap items-center justify-between gap-x-6 gap-y-4 px-4 pt-6 sm:px-6 md:px-10 md:pt-8">
+        <a
+          href="#home"
+          aria-label="Nainii нүүр хуудас"
+          className="display-heading inline-flex shrink-0 items-center gap-2 rounded-full text-xl text-[#472b39] focus-visible:ring-2 focus-visible:ring-[#713b63] sm:text-2xl"
+        >
+          <span aria-hidden="true" className="relative grid size-9 place-items-center rounded-full border border-[#a26382] bg-[#f8eaf1] text-2xl leading-none">
+            N<span className="absolute -right-0.5 -top-0.5 text-xs text-[#713b63]">✦</span>
+          </span>
+          Nainii
+        </a>
         <nav
           aria-label="Үндсэн цэс"
-          className="display-heading flex flex-wrap items-center justify-between gap-2 px-4 pt-6 text-sm leading-tight text-[#472b39] sm:px-6 sm:text-base md:px-10 md:pt-8 md:text-xl lg:text-2xl"
+          className="display-heading flex w-full flex-wrap items-center justify-between gap-x-3 gap-y-2 text-sm leading-tight text-[#472b39] sm:w-auto sm:gap-x-6 sm:text-base md:text-xl lg:text-2xl"
         >
           <a
             href="#about"

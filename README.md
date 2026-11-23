@@ -1,23 +1,31 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Nainii · Нандин-Эрдэнийн портфолио
 
-# Run and deploy your AI Studio app
+Мэдээллийн системийн оюутан Нандин-Эрдэнийн хувийн портфолио. Энд ур чадвар, сертификат, бүтээлүүд, CV болон холбоо барих мэдээллийг нэг дор цуглуулсан.
 
-This contains everything you need to run your app locally.
+- [Нийтэд нээлттэй сайт](https://portfolio-six-pi-77.vercel.app/)
+- [GitHub commit түүх](https://github.com/nandydn555-cell/portfolio/commits/main/)
 
-View your app in AI Studio: https://ai.studio/apps/94fba923-d635-40a9-acc9-4443fc0c0a05
+## Брэнд ба бүтээлч санаа
 
-## Run Locally
+**Nainii** брэндийн лого нь Нандин-Эрдэнэ нэрийн эхний **N** үсэг, одны дүрсийг хослуулсан тэмдэг. Сайтын цаасан дэвсгэр, стикер, хавтас хэлбэрийн картууд нь бүтээлүүдээ нэг хувийн дэвтэрт цуглуулсан мэт зохион байгуулах санаанаас үүдэлтэй. Нүүрний интерактив хөрөг нь курсорын хөдөлгөөнд хариу үзүүлдэг. Бүтээлийн карт бүр зураг, товч тайлбар, холбогдох demo болон эх кодын холбоосыг харуулдаг.
 
-**Prerequisites:**  Node.js
+## Ашигласан технологи
 
+- **React, TypeScript** — сайтын хэсгүүд, төслийн дэлгэрэнгүй, CV татах цонх болон холбоо барих форм.
+- **Vite, Tailwind CSS** — хөгжүүлэлт, production build болон дэлгэцийн хэмжээнд тохирдог загвар.
+- **Motion, WebGL Canvas** — гүйлгэх үеийн хөдөлгөөн, давхарласан төслийн картууд болон интерактив хөрөг.
+- **Vercel** — GitHub-ийн `main` салбараас нийтэд нээлттэй сайтыг байршуулдаг.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Локал ажиллуулах
+
+Node.js 20.19+ эсвэл 22.12+ хувилбар хэрэгтэй.
+
+```sh
+npm ci
+npm run dev
+```
+
+Сайт `http://localhost:3000` хаягаар нээгдэнэ. Production build хийхдээ `npm run build`, TypeScript шалгахдаа `npm run lint` командыг ажиллуулна.
 
 ## Загварын зургийн эх сурвалж
 
