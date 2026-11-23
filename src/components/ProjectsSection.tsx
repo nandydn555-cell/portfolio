@@ -83,7 +83,7 @@ export function ProjectsSection({ onSelectProject }: ProjectsSectionProps) {
   return (
     <section
       id="projects"
-      className="portfolio-background rounded-t-[40px] border-t border-[#d7c3b5] sm:rounded-t-[50px] md:rounded-t-[60px] -mt-10 sm:-mt-12 md:-mt-14 relative z-10 px-5 sm:px-8 md:px-10 pt-20 sm:pt-24 md:pt-32 pb-28 sm:pb-36"
+      className="projects-background rounded-t-[40px] border-t border-[#d7c3b5] sm:rounded-t-[50px] md:rounded-t-[60px] -mt-10 sm:-mt-12 md:-mt-14 relative z-10 px-5 sm:px-8 md:px-10 pt-20 sm:pt-24 md:pt-32 pb-28 sm:pb-36"
       style={{ overflowX: 'clip' }}
     >
       <FadeIn delay={0} y={40}>

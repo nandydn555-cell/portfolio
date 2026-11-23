@@ -32,6 +32,13 @@
   background-size: clamp(25rem, 55vw, 46rem) auto;
 }
 
+.projects-background {
+  background-color: #fcf8ee;
+  background-image: url('/theme/projects-floral.png');
+  background-position: center bottom;
+  background-size: clamp(29rem, 70vw, 56rem) auto;
+}
+
 .display-heading {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-weight: 600;
