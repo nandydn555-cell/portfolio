@@ -55,8 +55,9 @@ export function AboutSection({ onOpenContact }: AboutSectionProps) {
 
       {CREDENTIAL_BADGES.length > 0 ? (
         <section
+          id="credentials"
           aria-labelledby="credentials-title"
-          className="w-full max-w-3xl rounded-[2rem] border border-[#d7c3b5] bg-[#f8eef5] px-4 py-9 text-center sm:px-8 sm:py-12"
+          className="credentials-background w-full max-w-3xl rounded-[2rem] border border-[#d7c3b5] px-4 py-9 text-center sm:px-8 sm:py-12"
         >
           <h2 id="credentials-title" className="display-heading hero-heading mb-7 text-4xl sm:text-5xl">
             Сертификат, шагнал

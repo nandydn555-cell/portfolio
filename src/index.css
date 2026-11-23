@@ -32,11 +32,18 @@
   background-size: clamp(25rem, 55vw, 46rem) auto;
 }
 
-.projects-background {
+.credentials-background {
   background-color: #fcf8ee;
   background-image: url('/theme/projects-floral.png');
   background-position: center bottom;
-  background-size: clamp(29rem, 70vw, 56rem) auto;
+  background-size: max(100%, 27rem) auto;
+}
+
+.projects-background {
+  background-color: #f3f0e8;
+  background-image: url('/theme/projects-stars.png');
+  background-position: center top;
+  background-size: min(100%, 80rem) auto;
 }
 
 .display-heading {
