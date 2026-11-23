@@ -205,6 +205,7 @@ export const PROJECTS: ProjectItem[] = [
       { src: '/projects/petal-and-ink.webp', alt: 'Petal & Ink-ийн 3D дэвтэр, сарын сэтгэл санааны хуанли', fit: 'contain' },
     ],
     demoUrl: 'https://feeling-tracker.vercel.app/',
+    repositoryUrl: 'https://github.com/nandydn555-cell/feeling-tracker',
   },
   {
     id: 'celestial-planner',
@@ -216,6 +217,7 @@ export const PROJECTS: ProjectItem[] = [
       { src: '/projects/celestial-planner.webp', alt: 'Celestial Grace төлөвлөгчийн өдрийн ажлын жагсаалт, тэмдэглэл ба хавтаснууд', fit: 'contain' },
     ],
     demoUrl: 'https://celestial-planner-sigma.vercel.app/',
+    repositoryUrl: 'https://github.com/nandydn555-cell/celestial-planner',
   },
   {
     id: 'lensline',
