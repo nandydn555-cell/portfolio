@@ -254,6 +254,7 @@ export const PROJECTS: ProjectItem[] = [
     images: [
       { src: '/projects/sakura-blossom.png', alt: 'Сакура цэцэг, лууны зурагтай шинэ Zen Sudoku дэлгэц', fit: 'contain' },
     ],
+    repositoryUrl: 'https://github.com/nandydn555-cell/sakura-zen',
   },
   {
     id: 'packet-tracer',
